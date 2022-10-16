@@ -1,0 +1,44 @@
+* {
+  font-family: IntelOneMono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  font-size: 1.03em;
+}
+
+window#waybar {
+  background: alpha(#051025, 0.6);
+  border-radius: 0.55em;
+}
+
+#workspaces button {
+  background: #307090;
+  min-width: 1.8em;
+  min-height: 1.8em;
+  border-radius: 0.6em;
+  padding: 0em;
+}
+
+/* remove for hyprland */
+#workspaces button.persistent {
+  background: #204050;
+}
+#workspaces button.empty {
+  background: #204050;
+}
+
+#workspaces button:hover {
+  background: #286282;
+  border: #286282;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  padding-left: 0.01em;
+  padding-right: 0.01em;
+}
+
+#workspaces button.visible {
+  background: #3082b0;
+}
+
+#workspaces button.active {
+  background: #3082b0;
+}
+

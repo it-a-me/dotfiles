@@ -1,0 +1,32 @@
+directory: ~/Music
+library: ~/.config/beets/musiclibrary.db
+plugins: fetchart embedart convert scrub fromfilename edit spotify
+art_filename: albumart
+asciify_paths: yes
+threaded: yes
+  # original_date: no
+per_disc_numbering: no
+chroma:
+  auto: yes
+
+convert:
+    auto: no
+    ffmpeg: /usr/bin/ffmpeg
+    opts: -ab 320k -ac 2 -ar 48000
+    max_bitrate: 320
+    threads: 1
+
+paths:
+    singleton: $artist/Singles/$title
+    default: $albumartist/$album/$title
+    comp: Compilations/$album/$track - $title
+    albumtype_soundtrack: Soundtracks/$album/$track $title
+
+import:
+    write: yes
+    copy: yes
+      #move: yes
+    resume: ask
+    incremental: yes
+    quiet_fallback: skip
+    timid: no

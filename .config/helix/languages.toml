@@ -1,0 +1,40 @@
+[language-server]
+vale-ls = { command = "vale-ls" }
+
+[[language]]
+name="slint"
+auto-format = true
+formatter = { command = "slint_format.sh" }
+
+[[language]]
+name="cpp"
+auto-format = true
+
+[[language]]
+name="c"
+auto-format = true
+
+[[language]]
+name="perl"
+auto-format = true
+formatter = { command = "perltidy", args = ["-i=2"] }
+
+[[language]]
+name="python"
+auto-format = true
+formatter = { command = "autopep8", args = ["-"] }
+language-servers = [ "pyright" ]
+
+[[language]]
+name="markdown"
+roots = [".marksman.toml", ".vale.ini"]
+formatter = { command = "pandoc", args = ["--from", "gfm", "--to", "gfm"] }
+language-servers = [ "marksman", "vale-ls"]
+
+[[language]]
+name="text"
+scope = "text.txt"
+roots = ["vale.ini"]
+file-types = ["txt"]
+language-servers = [ "vale-ls" ]
+

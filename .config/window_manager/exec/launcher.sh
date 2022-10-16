@@ -1,0 +1,1 @@
+../scripts/launchers/fuzzel.sh

@@ -1,0 +1,4 @@
+set shell := ["/bin/bash", "-c"]
+
+selection:
+    ./exec/screenshot/selection.sh

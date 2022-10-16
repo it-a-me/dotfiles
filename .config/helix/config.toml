@@ -1,0 +1,19 @@
+theme = "monokai_pro_machine"
+
+[editor]
+line-number = "relative"
+idle-timeout = 0
+completion-replace = false
+auto-pairs = false
+soft-wrap.enable = true
+
+[editor.lsp]
+enable = true
+display-messages = true
+auto-signature-help = true
+display-inlay-hints = true
+display-signature-help-docs = true
+snippets = true
+
+[editor.file-picker]
+hidden = false

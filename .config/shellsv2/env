@@ -1,0 +1,9 @@
+#this is the git synced env file.  Example: "BROWSER librewolf"
+EDITOR hx
+NPM_CONFIG_USERCONFIG $HOME/.config/npm/npmrc
+
+QT_QPA_PLATFORMTHEME qt6ct
+
+R_ENVIRON_USER ~/.config/R/Renviron
+
+ANDROID_HOME /home/me/Documents/android/android_home

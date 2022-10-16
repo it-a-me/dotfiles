@@ -1,0 +1,1 @@
+../scripts/bars/eww.sh

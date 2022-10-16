@@ -1,0 +1,6 @@
+export BROWSER="flatpak run io.gitlab.librewolf-community"
+export GTK_THEME=Dracula:dark
+# export QT_QPA_PLATFORMTHEME=kvantum
+# export QT_STYLE_OVERRIDE=kvantum
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
+export MOZ_ENABLE_WAYLAND=1

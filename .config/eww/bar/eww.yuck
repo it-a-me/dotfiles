@@ -1,0 +1,92 @@
+(defvar scripts_dir "~/.config/window_manager/exec")
+(defvar bar_dir "~/.config/window_manager/scripts/bars/general")
+(defpoll workspaces :interval "100ms" "~/.local/bin/dynamic_workspaces")
+
+(defpoll gpu_use :interval "100ms" '/home/me/.scripts/rocm/gpu_mem.sh')
+(defpoll gpu_mem :interval "100ms" "/home/me/.scripts/rocm/gpu_use.sh")
+
+(defpoll date :interval "1s"
+ "~/.config/window_manager/scripts/bars/general/date.sh"
+ )
+(defpoll net_up :interval "1s"
+ "~/.local/bin/network_watch status up"
+ )
+(defpoll net_down :interval "1s"
+ "~/.local/bin/network_watch status down"
+ )
+(defwidget bar []
+ (centerbox :orientation "h"
+  (workspaces)
+  (time)
+  (sidestuff)))
+
+(defwidget time []
+ "${date}"
+ )
+(defwidget sidestuff []
+ (box :class "sidestuff" :orientation "h" :space-evenly false :spacing 20 :halign "end"
+  "MEM: ${round(EWW_RAM.used_mem_perc, 0)}%"
+  (label
+   :text "GPU: ${gpu_use}%"
+   :width 80
+   :limit-width 7)
+  (label
+   :text "GPU_MEM: ${gpu_mem}%"
+   :width 120 
+   :limit-width 13)
+  (label
+   :text "CPU: ${round(EWW_CPU.avg, 1)}%"
+  )
+  (network)
+  "🔉${volume}"
+ ))
+
+(defwidget network []
+ (box :space-evenly false :orientation "h" :spacing 0
+  (label
+   :text "Up: ${net_up}"
+   :width 100
+   :limit-width 13)
+  (label
+   :text "Down: ${net_down}"
+   :width 140
+   :limit-width 15
+  )
+ ))
+
+(defwidget workspaces []
+ (box :class "workspaces"
+  :orientation "h"
+  :space-evenly true
+  :halign "start"
+  :spacing 10
+  (for entry in workspaces
+   (button 
+    :class { 
+    "${entry.is_active}" ? "active" : "${
+    "${entry.has_windows}" ? "windowed" : "" 
+    }"
+    }
+    :onclick "${scripts_dir}/window_manager/set_active_workspace.sh ${entry.id}" "${entry.id}")
+  )
+ ))
+
+(defpoll volume :interval "100ms"
+ "~/.config/window_manager/exec/volume/volume.sh")
+
+(defpoll time :interval "10s"
+ "date '+%H:%M %b %d, %Y'")
+
+(defwindow bar
+ :monitor 0
+ :geometry (geometry :x "0%"
+    :y "0%"
+    :width "100%"
+    :height "7px"
+    :anchor "top center"
+    )
+ :valign center
+ :focusable false
+ :exclusive true
+ (bar)
+ )

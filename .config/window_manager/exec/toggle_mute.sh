@@ -1,0 +1,1 @@
+../scripts/volume/pamixer/toggle_mute.sh

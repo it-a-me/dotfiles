@@ -1,0 +1,10 @@
+[Unit]
+Description=Mount keepass
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Documents/keepass
+ExecStart=/usr/bin/rclone mount keepass: sync
+
+[Install]
+WantedBy=default.target
