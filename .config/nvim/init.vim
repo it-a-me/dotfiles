@@ -1,10 +1,10 @@
 call plug#begin()
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'https://github.com/dracula/vim'
 	Plug 'https://github.com/preservim/nerdtree'
-
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"    Plug 'nvim-lua/completion-nvim'
 
 	Plug 'https://github.com/morhetz/gruvbox'
+	Plug 'https://github.com/dracula/vim'
     Plug 'https://github.com/sainnhe/everforest'
     Plug 'https://github.com/sainnhe/sonokai'
 call plug#end()
@@ -33,6 +33,8 @@ filetype plugin on
 set number
 set relativenumber
 nmap <space><space> zA
+nmap <<AS-F> :call CocActionAsync('format')
+
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
 
@@ -50,13 +52,13 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+"
+"" Use <c-space> to trigger completion.
+"if has('nvim')
+"  inoremap <silent><expr> <c-space> coc#refresh()
+"else
+"  inoremap <silent><expr> <c-@> coc#refresh()
+"endif
 
 " Some servers have issues with backup files, see #649.
 set nobackup
