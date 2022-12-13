@@ -18,5 +18,6 @@ export PATH="$PATH:$HOME/.emacs.d/bin"
 alias ls='ls --color=auto'
 alias vim=nvim
 alias dotman='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotman-update='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add -u'
 alias mu-dlp='yt-dlp --extract-audio --audio-format mp3 --audio-quality 0'
 
