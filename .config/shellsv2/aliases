@@ -1,4 +1,3 @@
-sudo doas
 mpv-term mpv --vo=kitty --vo-kitty-use-shm=yes
 ls ls --color=auto
 zj zellij
