@@ -10,5 +10,3 @@ end
 if command -v 'nvim' > /dev/null
 	set MANPAGER 'nvim +Man!'
 end
-
-set -a MANPATH ~/.local/share/man
