@@ -1,0 +1,12 @@
+diff --git a/.config/waybar/config.jsonc b/.config/waybar/config.jsonc
+index 1a62118..5f81bc3 100644
+--- a/.config/waybar/config.jsonc
++++ b/.config/waybar/config.jsonc
+@@ -11,6 +11,7 @@
+     "clock"
+   ],
+   "modules-right": [
++    "battery",
+     "pulseaudio",
+     "cpu",
+     "memory"

@@ -15,6 +15,9 @@
     "cpu",
     "memory"
   ],
+  "battery": {
+    "format": "Bat:{}%"
+  },
   "pulseaudio": {
     "format": "Vol:{volume}",
     "format-muted": "MEM:M({volume}%)"
