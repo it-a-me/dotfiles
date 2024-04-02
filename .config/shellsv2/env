@@ -1,5 +1,5 @@
 #this is the git synced env file.  Example: "BROWSER librewolf"
-EDITOR hx
+EDITOR nvim
 NPM_CONFIG_USERCONFIG $HOME/.config/npm/npmrc
 
 QT_QPA_PLATFORMTHEME qt6ct
