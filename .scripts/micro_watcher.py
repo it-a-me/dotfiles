@@ -47,14 +47,16 @@ class FileWatcher:
     persistent: bool
     files: List[WatchedFile]
     sleep_time: float
+    wipe: bool
 
     def __init__(self, commands: List[str], autokill: bool, files: List[Path],
-                 sleep_time: float, persistent: bool) -> None:
+                 sleep_time: float, persistent: bool, wipe: bool) -> None:
         self.commands = commands
         self.autokill = autokill
         self.persistent = persistent
         self.files = list(map(WatchedFile, files))
         self.sleep_time = sleep_time
+        self.wipe = wipe
 
     def files_exist(self) -> bool:
         return all(map(lambda f: f.path.exists(), self.files))
@@ -79,13 +81,15 @@ def parse_args() -> FileWatcher:
                         action="store_true", dest="persistent", help="restart the processes even if they exit with an non-zero exit code")
     parser.add_argument("--sleep_time", "-t",
                         action="store", dest="time", default=0.3, help="seconds to wait between file checks DEFAULT=0.3")
+    parser.add_argument("--no-wipe", "-w",
+                        action="store_false", dest="wipe", default=True, help="don't wipe the screen before running the program")
     args = parser.parse_args()
 
     if len(args.files) == 0:
         exit("please supply one or more files")
     if len(args.commands) == 0:
         exit("please supply one or more commands")
-    return FileWatcher(args.commands, args.autokill, list(map(Path, args.files)), args.time, args.persistent)
+    return FileWatcher(args.commands, args.autokill, list(map(Path, args.files)), args.time, args.persistent, args.wipe)
 
 
 def process_crashed(exitcode: int):
@@ -98,8 +102,11 @@ def process_still_running():
     exit(f"subprocess has not exited")
 
 
-def start_processes(commands: List[str]):
+def start_processes(commands: List[str], wipe: bool):
+    if wipe:
+        print('\x1b[1J\x1b[0;0H', end=None, flush=True)
     for command in commands:
+        print(f"running `{command}`")
         process: Popen = Popen(shlex.split(command), shell=False)
         processes.append(process)
         process.poll()
@@ -113,7 +120,7 @@ if __name__ == "__main__":
     if not args.files_exist():
         exit(f"{args.missing_files()} do not exist")
     args.updated()
-    processes: List[Popen] = start_processes(args.commands)
+    processes: List[Popen] = start_processes(args.commands, args.wipe)
 
     while True:
         sleep(args.sleep_time)
@@ -137,4 +144,4 @@ if __name__ == "__main__":
 
             if any(map(lambda p: p is None, processes)):
                 process_still_running()
-            processes = start_processes(args.commands)
+            processes = start_processes(args.commands, args.wipe)
