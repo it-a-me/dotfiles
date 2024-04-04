@@ -16,3 +16,5 @@
   insteadOf = https://codeberg.org/
 [pull]
 	rebase = true
+[diff]
+	tool = nvimdiff
