@@ -14,3 +14,5 @@
 #   insteadOf = https://github.com/
 [url "ssh://git@codeberg.org/"]
   insteadOf = https://codeberg.org/
+[pull]
+	rebase = true
