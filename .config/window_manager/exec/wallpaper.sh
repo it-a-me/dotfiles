@@ -1,1 +1,1 @@
-../scripts/window_managers/wayland/wbg.sh
+../scripts/window_managers/wayland/swaybg.sh

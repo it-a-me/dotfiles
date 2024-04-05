@@ -8,7 +8,7 @@ exec --no-startup-id dbus-update-activation-environment --all
 exec ~/.config/window_manager/scripts/window_managers/sway/timeout.sh
 #exec ~/.scripts/keepass_mount.sh
 exec mako
-exec ~/.config/window_manager/scripts/window_managers/wayland/wbg.sh
+exec ~/.config/window_manager/exec/wallpaper.sh
 
 ### Variables
 #
