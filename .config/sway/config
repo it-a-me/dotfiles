@@ -2,8 +2,9 @@
 # 
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
-#exec --no-startup-id dbus-update-activation-environment --all
+exec --no-startup-id dbus-update-activation-environment --all
 # Read `man 5 sway` for a complete reference.
+#exec dbus-update-activation-environment --systemd SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
 exec ~/.config/window_manager/scripts/window_managers/sway/timeout.sh
 #exec ~/.scripts/keepass_mount.sh
 exec mako
