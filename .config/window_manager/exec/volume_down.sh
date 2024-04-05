@@ -1,1 +1,0 @@
-../scripts/volume/pamixer/volume_down.sh

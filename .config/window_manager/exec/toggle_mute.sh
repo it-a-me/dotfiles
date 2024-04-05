@@ -1,1 +1,1 @@
-../scripts/volume/pamixer/toggle_mute.sh
+../scripts/volume/wpctl/toggle_mute.sh

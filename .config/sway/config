@@ -22,11 +22,11 @@ bindsym $mod+Delete output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' toggle; ou
 output 'AOC 24G1WG4 0x000199D9' res 1920x1080@60Hz pos -1920 0
 
     # Audio
-bindsym XF86AudioLowerVolume exec "~/.config/window_manager/exec/volume_down.sh"
-bindsym XF86AudioRaiseVolume exec "~/.config/window_manager/exec/volume_up.sh"
+bindsym XF86AudioLowerVolume exec "~/.config/window_manager/exec/volume/volume_down.sh"
+bindsym XF86AudioRaiseVolume exec "~/.config/window_manager/exec/volume/volume_up.sh"
+bindsym XF86AudioMute        exec "~/.config/window_manager/exec/volume/toggle_mute.sh" 
 bindsym $mod+XF86AudioLowerVolume exec "~/.config/window_manager/scripts/hardware/brightness/decrease_brightness.sh"
 bindsym $mod+XF86AudioRaiseVolume exec "~/.config/window_manager/scripts/hardware/brightness/increase_brightness.sh"
-bindsym XF86AudioMute exec "~/.config/window_manager/exec/toggle_mute.sh" 
 
     # General
 bindsym $mod+Shift+Return exec "fuzzel --terminal foot"
