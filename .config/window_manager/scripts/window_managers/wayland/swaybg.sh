@@ -1,3 +1,3 @@
-#!/bin/bash
-source $(dirname $0)/../settings.sh
-swaybg --mode center --image $WALLPAPER_PATH
+#!/bin/sh
+. $(dirname $0)/../settings.sh
+exec swaybg --mode center --image "$WALLPAPER_PATH"
