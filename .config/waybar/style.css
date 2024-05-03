@@ -18,11 +18,19 @@ window#waybar {
 }
 
 /* remove for hyprland */
-#workspaces button.persistent {
+/*#workspaces button.persistent {
   background: #204050;
-}
+}*/
 #workspaces button.empty {
   background: #204050;
+}
+
+#workspaces button.visible {
+  background: #d9b785;
+}
+
+#workspaces button.focused {
+  background: #dd88aa;
 }
 
 #workspaces button:hover {
@@ -32,13 +40,5 @@ window#waybar {
   text-shadow: inherit;
   padding-left: 0.01em;
   padding-right: 0.01em;
-}
-
-#workspaces button.visible {
-  background: #3082b0;
-}
-
-#workspaces button.active {
-  background: #3082b0;
 }
 

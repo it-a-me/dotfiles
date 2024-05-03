@@ -17,7 +17,7 @@ gaps vertical 5
 output * adaptive_sync on
 
 output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' res 2560x1440@144Hz pos 0 0 scale 1.3
-bindsym $mod+Delete output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' toggle; output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' toggle
+bindsym $mod+Delete output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' toggle;
 
 output 'AOC 24G1WG4 0x000199D9' res 1920x1080@60Hz pos -1920 0
 
@@ -76,18 +76,20 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym XF86AudioPlay exec ~/.scripts/bluetooth_reconnect.sh
+
 
     # Sway Switch Workspaces
-bindsym $mod+1 [workspace=^1$] move workspace to output current; workspace number 1
-bindsym $mod+2 [workspace=^2$] move workspace to output current; workspace number 2
-bindsym $mod+3 [workspace=^3$] move workspace to output current; workspace number 3
-bindsym $mod+4 [workspace=^4$] move workspace to output current; workspace number 4
-bindsym $mod+5 [workspace=^5$] move workspace to output current; workspace number 5
-bindsym $mod+6 [workspace=^6$] move workspace to output current; workspace number 6
-bindsym $mod+7 [workspace=^7$] move workspace to output current; workspace number 7
-bindsym $mod+8 [workspace=^8$] move workspace to output current; workspace number 8
-bindsym $mod+9 [workspace=^9$] move workspace to output current; workspace number 9
-bindsym $mod+0 [workspace=^10$] move workspace to output current; workspace number 10
+bindsym $mod+1 exec ~/.config/sway/select_workspace.sh 1
+bindsym $mod+2 exec ~/.config/sway/select_workspace.sh 2
+bindsym $mod+3 exec ~/.config/sway/select_workspace.sh 3
+bindsym $mod+4 exec ~/.config/sway/select_workspace.sh 4
+bindsym $mod+5 exec ~/.config/sway/select_workspace.sh 5
+bindsym $mod+6 exec ~/.config/sway/select_workspace.sh 6
+bindsym $mod+7 exec ~/.config/sway/select_workspace.sh 7
+bindsym $mod+8 exec ~/.config/sway/select_workspace.sh 8
+bindsym $mod+9 exec ~/.config/sway/select_workspace.sh 9
+bindsym $mod+0 exec ~/.config/sway/select_workspace.sh 10
 
     # Sway Move Window to Workspace
 bindsym $mod+Shift+1 move container to workspace number 1
