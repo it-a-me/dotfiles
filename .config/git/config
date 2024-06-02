@@ -1,6 +1,7 @@
 [user]
 	name = it-a-me
 	email = wobbe.carter@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJE4TxDkEbbSrnvteczdd5oy7R6c6jxQJFCpJ311ykkJ
 [credential]
 	helper = store
 [alias]
@@ -21,3 +22,7 @@
 	tool = nvimdiff
 [rebase]
 	autoSquash = true
+[commit]
+	gpgSign = true
+[gpg]
+	format = ssh
