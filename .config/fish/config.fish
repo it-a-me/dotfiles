@@ -9,4 +9,5 @@ if status is-interactive
 end
 if command -v 'nvim' > /dev/null
 	set MANPAGER 'nvim +Man!'
+	export MANPAGER
 end
