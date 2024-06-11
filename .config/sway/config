@@ -27,13 +27,15 @@ bindsym XF86AudioRaiseVolume exec "~/.config/window_manager/exec/volume/volume_u
 bindsym XF86AudioMute        exec "~/.config/window_manager/exec/volume/toggle_mute.sh" 
 bindsym $mod+XF86AudioLowerVolume exec "~/.config/window_manager/scripts/hardware/brightness/decrease_brightness.sh"
 bindsym $mod+XF86AudioRaiseVolume exec "~/.config/window_manager/scripts/hardware/brightness/increase_brightness.sh"
+bindsym --locked XF86MonBrightnessUp exec "~/.scripts/backlight_up.sh"
+bindsym --locked XF86MonBrightnessDown exec "~/.scripts/backlight_down.sh"
 
     # General
 bindsym $mod+Shift+Return exec "fuzzel --terminal foot"
 bindsym $mod+Return exec foot
 bindsym Print exec ~/.config/window_manager/exec/screenshot/screen.sh
 bindsym Shift+Print exec ~/.config/window_manager/exec/screenshot/selection.sh
-bindsym Alt+Print exec ~/.scripts/force_copy.sh
+bindsym Alt+Print exec ~/.scripts/force_copy.ih
 bindsym $mod+b exec firefox
 
 
