@@ -7,7 +7,10 @@ if status is-interactive
 
 	set fish_greeting
 end
+
 if command -v 'nvim' > /dev/null
 	set MANPAGER 'nvim +Man!'
 	export MANPAGER
 end
+
+abbr ollama podman exec -it ollama ollama
