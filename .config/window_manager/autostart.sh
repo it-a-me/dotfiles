@@ -8,5 +8,9 @@ fi
 
 $CONFIG_DIR/exec/wallpaper.sh &
 $CONFIG_DIR/scripts/window_managers/sway/timeout.sh &
-~/.local/bin/waybar > ~/.cache/waybar.log &
+if -x ~/.local/bin/waybar; then
+	~/.local/bin/waybar &> ~/.cache/waybar.log &
+elif command -v waybar; then
+	waybar &> ~/.cache/waybar.log
+fi
 test $(command -v mako) && mako
