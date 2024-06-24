@@ -1,3 +1,4 @@
-#!/usr/bin/env dash
+#!/bin/sh
 . /etc/os-release
-echo $ID
+
+printf $ID

@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
+. $HOME/.scripts/shutil.sh
+deps swaymsg jq
+
 if test -z "$1"; then
   printf 'please supply the name of a monitor as the first argument, ex (`%s "DP-1"`)\n' "$0"
   exit 1
