@@ -31,6 +31,7 @@ bindsym $mod+XF86AudioRaiseVolume exec "~/.config/window_manager/scripts/hardwar
 bindsym --locked XF86MonBrightnessUp exec "~/.scripts/backlight_up.sh"
 bindsym --locked XF86MonBrightnessDown exec "~/.scripts/backlight_down.sh"
 
+bindsym $mod+Alt+c exec "~/.scripts/word_count.sh"
     # General
 bindsym $mod+Shift+Return exec "fuzzel --terminal foot"
 bindsym $mod+Return exec foot
