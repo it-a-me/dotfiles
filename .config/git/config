@@ -1,7 +1,7 @@
 [user]
 	name = it-a-me
 	email = wobbe.carter@gmail.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJE4TxDkEbbSrnvteczdd5oy7R6c6jxQJFCpJ311ykkJ
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICwc8MZU35Ks068XAw/eYMbULa1tG4LBvQrwAHEAsIjG
 [credential]
 	helper = store
 [alias]
