@@ -1,5 +1,5 @@
 #!/bin/sh
-. $HOME/.scripts/shutil.sh
+. "$HOME"/.scripts/shutil.sh
 deps wl-paste notify-send wc
  
 WORDS="$(wl-paste | wc -w)"

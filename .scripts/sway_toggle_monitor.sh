@@ -1,5 +1,5 @@
 #!/bin/sh
-. $HOME/.scripts/shutil.sh
+. "$HOME"/.scripts/shutil.sh
 deps swaymsg jq
 
 if test -z "$1"; then
@@ -12,4 +12,4 @@ if test ! "$(swaymsg -rt get_outputs | jq --arg output "$1" 'map(.name == $outpu
 fi
 dpms="$(swaymsg -rt get_outputs | jq --arg output "$1" 'map(select(.name == $output))[0].dpms')"
 swaymsg output "$1" dpms toggle
-echo $dpms
+echo "$dpms"
