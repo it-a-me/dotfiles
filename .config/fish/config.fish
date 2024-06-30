@@ -15,12 +15,16 @@ if command -v 'nvim' > /dev/null
 	export MANPAGER
 end
 
-abbr ollama podman exec -it ollama ollama
-
 function no_hist -S
 	builtin history clear-session
 	set -x fish_history ''
 end
+
+function fish_command_not_found
+    __fish_default_command_not_found_handler $argv
+end
+
+abbr ollama podman exec -it ollama ollama
 
 alias ffmpeg 'ffmpeg -hide_banner'
 alias ffprobe 'ffprobe -hide_banner'
