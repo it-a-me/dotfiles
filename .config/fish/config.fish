@@ -14,3 +14,8 @@ if command -v 'nvim' > /dev/null
 end
 
 abbr ollama podman exec -it ollama ollama
+
+function no_hist -S
+	builtin history clear-session
+	set -x fish_history ''
+end
