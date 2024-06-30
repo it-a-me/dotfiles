@@ -26,3 +26,5 @@
 	gpgSign = true
 [gpg]
 	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/me/.config/git/allowed_signers
