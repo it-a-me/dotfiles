@@ -1,3 +1,5 @@
+source ~/.config/fish/env.fish
+
 if status is-interactive
 	~/.config/shellsv2/update.pl
 	source ~/.config/shellsv2/export/path.fish
@@ -19,3 +21,7 @@ function no_hist -S
 	builtin history clear-session
 	set -x fish_history ''
 end
+
+alias ffmpeg 'ffmpeg -hide_banner'
+alias ffprobe 'ffprobe -hide_banner'
+alias ffplay 'ffplay -hide_banner'
