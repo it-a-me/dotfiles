@@ -1,0 +1,14 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-f": "editor::Format"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion"
+    }
+  }
+]
