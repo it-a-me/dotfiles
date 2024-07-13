@@ -256,7 +256,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "foot"; }
-    Mod+Shift+Return { spawn "fuzzel"; }
+    Mod+Shift+Return { spawn "fuzzel" "--terminal" "foot"; }
     Super+Alt+L { spawn "swaylock"; }
 
     // You can also use a shell:
