@@ -4,7 +4,8 @@
   // "height": 40,
   "spacing": 20,
   "modules-left": [
-    "sway/workspaces"
+    "sway/workspaces",
+    "wlr/workspaces"
     //"hyprland/workspaces"
   ],
   "modules-center": [
