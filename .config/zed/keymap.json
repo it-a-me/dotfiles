@@ -6,9 +6,53 @@
     }
   },
   {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
+      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"]
+    }
+  },
+  {
+    "context": "!menu && vim_mode != insert && Pane",
+    "bindings": {
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-w c": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-w c": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-n": "zed::NoAction",
+      "ctrl-p": "zed::NoAction"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "g r": "editor::FindAllReferences",
+      "space r": "editor::Rename",
+      "space f": "file_finder::Toggle",
+      "space t": "terminal_panel::ToggleFocus",
+      "space a": "editor::ToggleCodeActions",
+      "space o": "workspace::Open",
+      "space z": "workspace::ToggleZoom"
+    }
+  },
+  {
     "context": "Editor && vim_mode == insert",
     "bindings": {
       "ctrl-y": "editor::ConfirmCompletion"
+      // "ctrl-l": "editor::Tab",
+      // "ctrl-h": "editor::TabPrev"
     }
   }
 ]
