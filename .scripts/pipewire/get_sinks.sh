@@ -16,6 +16,7 @@ pw-dump -N |
                     id: .id,
                     name: .info.props["node.name"],
                     description: .info.props["node.description"],
+                    mute: .info.params.Props[0].mute,
                     state:.info.state,
                     default: (.info.props["node.name"] == $default_sink)
                 }
