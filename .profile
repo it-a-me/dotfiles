@@ -1,9 +1,2 @@
 export ENV=$HOME/.config/init.sh
-
-
-TMP=$(mktemp)
-ssh-agent > ${TMP}
-. ${TMP}
-rm ${TMP}
-
-ssh-add ~/.ssh/signing_key
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/SSH_AUTH_SOCK"
