@@ -3,9 +3,6 @@ include /etc/sway/config.d/*
 exec --no-startup-id dbus-update-activation-environment --all
 
 
-    # Global Mod Key
-set $mod Mod4
-
     # Gaps
 gaps left 7
 gaps right 7
@@ -17,106 +14,107 @@ gaps vertical 5
     # monitor configs
 output * adaptive_sync on
 
-output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' res 2560x1440@144Hz pos 0 0 scale 1.3
-bindsym --locked $mod+Delete output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' toggle;
-bindsym --locked $mod+Shift+Delete exec systemctl suspend
+output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' pos 1969 0 scale 1.3
+bindsym --locked Mod4+Delete output 'LG Electronics LG ULTRAGEAR 308NTNHD2671' toggle;
+bindsym --locked Mod4+Shift+Delete exec systemctl suspend
+bindsym --locked Mod4+Scroll_Lock exec ~/.config/sway/toggle_dpms.sh
 
-output 'AOC 24G1WG4 0x000199D9' res 1920x1080@60Hz pos -1920 0
+output 'AOC 24G1WG4 0x000199D9' pos 0 0
 
     # Audio
 bindsym XF86AudioLowerVolume exec "~/.config/window_manager/exec/volume/volume_down.sh"
 bindsym XF86AudioRaiseVolume exec "~/.config/window_manager/exec/volume/volume_up.sh"
 bindsym XF86AudioMute        exec "~/.config/window_manager/exec/volume/toggle_mute.sh" 
 bindsym XF86AudioMicMute        exec "~/.scripts/pipewire/toggle_mic_mute.sh" 
-bindsym $mod+XF86AudioMute        exec espeak-ng -a 100 'test sound'
-bindsym $mod+XF86AudioLowerVolume exec "~/.config/window_manager/scripts/hardware/brightness/decrease_brightness.sh"
-bindsym $mod+XF86AudioRaiseVolume exec "~/.config/window_manager/scripts/hardware/brightness/increase_brightness.sh"
+bindsym Mod4+XF86AudioMute        exec espeak-ng -a 100 'test sound'
+bindsym Mod4+XF86AudioLowerVolume exec "~/.config/window_manager/scripts/hardware/brightness/decrease_brightness.sh"
+bindsym Mod4+XF86AudioRaiseVolume exec "~/.config/window_manager/scripts/hardware/brightness/increase_brightness.sh"
 bindsym --locked XF86MonBrightnessUp exec "light -A 10"
 bindsym --locked XF86MonBrightnessDown exec "light -U 10"
-bindsym $mod+Alt+c exec "~/.scripts/word_count.sh"
+bindsym Mod4+Alt+c exec "~/.scripts/word_count.sh"
     # General
-bindsym $mod+Shift+Return exec "fuzzel --terminal foot"
-bindsym $mod+Return exec foot
+bindsym Mod4+Shift+Return exec "fuzzel --terminal foot"
+bindsym Mod4+Return exec foot
 bindsym Print exec ~/.config/window_manager/exec/screenshot/screen.sh
 bindsym Shift+Print exec ~/.config/window_manager/exec/screenshot/selection.sh
 bindsym Alt+Print exec ~/.scripts/force_copy.ih
-bindsym $mod+b exec firefox
+bindsym Mod4+b exec firefox
 
 
     # Sway Internal 
-bindsym $mod+Shift+r reload
-bindsym $mod+Shift+q exit
+bindsym Mod4+Shift+r reload
+bindsym Mod4+Shift+q exit
 
     # Sway General
-bindsym $mod+q kill
-bindsym $mod+f fullscreen
-bindsym $mod+period sticky toggle
-floating_modifier $mod normal
+bindsym Mod4+q kill
+bindsym Mod4+f fullscreen
+bindsym Mod4+period sticky toggle
+floating_modifier Mod4 normal
 
     # Sway Floating
-bindsym $mod+Shift+space floating toggle; sticky disable
-bindsym $mod+space focus mode_toggle
+bindsym Mod4+Shift+space floating toggle; sticky disable
+bindsym Mod4+space focus mode_toggle
 
     # Sway Vi-Movement
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym Mod4+h focus left
+bindsym Mod4+j focus down
+bindsym Mod4+k focus up
+bindsym Mod4+l focus right
     
     # Sway Arrow-Movement
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
 
 
     # Sway Vi-Window Resizing
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym Mod4+Shift+h move left
+bindsym Mod4+Shift+j move down
+bindsym Mod4+Shift+k move up
+bindsym Mod4+Shift+l move right
 
     # Sway Arrow-Window Resizing
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Right move right
 
 bindsym XF86AudioPlay exec ~/.scripts/bluetooth_reconnect.sh
 
 
     # Sway Switch Workspaces
-bindsym $mod+1 exec ~/.config/sway/select_workspace.sh 1
-bindsym $mod+2 exec ~/.config/sway/select_workspace.sh 2
-bindsym $mod+3 exec ~/.config/sway/select_workspace.sh 3
-bindsym $mod+4 exec ~/.config/sway/select_workspace.sh 4
-bindsym $mod+5 exec ~/.config/sway/select_workspace.sh 5
-bindsym $mod+6 exec ~/.config/sway/select_workspace.sh 6
-bindsym $mod+7 exec ~/.config/sway/select_workspace.sh 7
-bindsym $mod+8 exec ~/.config/sway/select_workspace.sh 8
-bindsym $mod+9 exec ~/.config/sway/select_workspace.sh 9
-bindsym $mod+0 exec ~/.config/sway/select_workspace.sh 10
+bindsym Mod4+1 exec ~/.config/sway/select_workspace.sh 1
+bindsym Mod4+2 exec ~/.config/sway/select_workspace.sh 2
+bindsym Mod4+3 exec ~/.config/sway/select_workspace.sh 3
+bindsym Mod4+4 exec ~/.config/sway/select_workspace.sh 4
+bindsym Mod4+5 exec ~/.config/sway/select_workspace.sh 5
+bindsym Mod4+6 exec ~/.config/sway/select_workspace.sh 6
+bindsym Mod4+7 exec ~/.config/sway/select_workspace.sh 7
+bindsym Mod4+8 exec ~/.config/sway/select_workspace.sh 8
+bindsym Mod4+9 exec ~/.config/sway/select_workspace.sh 9
+bindsym Mod4+0 exec ~/.config/sway/select_workspace.sh 10
 
     # Sway Move Window to Workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym Mod4+Shift+1 move container to workspace number 1
+bindsym Mod4+Shift+2 move container to workspace number 2
+bindsym Mod4+Shift+3 move container to workspace number 3
+bindsym Mod4+Shift+4 move container to workspace number 4
+bindsym Mod4+Shift+5 move container to workspace number 5
+bindsym Mod4+Shift+6 move container to workspace number 6
+bindsym Mod4+Shift+7 move container to workspace number 7
+bindsym Mod4+Shift+8 move container to workspace number 8
+bindsym Mod4+Shift+9 move container to workspace number 9
+bindsym Mod4+Shift+0 move container to workspace number 10
 
     # Sway splits
-bindsym $mod+n splith
-bindsym $mod+v splitv
+bindsym Mod4+n splith
+bindsym Mod4+v splitv
     
     # Sway layouts
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout toggle split
 
 mode "resize" {
         # Vi resizing
@@ -136,7 +134,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym Mod4+r mode "resize"
 default_border pixel 3
 
 exec ~/.config/window_manager/autostart.sh
