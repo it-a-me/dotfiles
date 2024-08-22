@@ -19,4 +19,12 @@ function fish_command_not_found
     __fish_default_command_not_found_handler $argv
 end
 
+if test -f "~/.config/fish/$(hostname).fish"
+	source "~/.config/fish/$(hostname).fish"
+end
+
+for file in ~/.config/fish/functions/*.fish
+	source "$file"
+end
+
 
