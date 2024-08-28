@@ -1,8 +1,8 @@
 #include disto specifc configs
 include /etc/sway/config.d/*
 exec --no-startup-id dbus-update-activation-environment --all
-
-
+exec ~/.scripts/sway/hooks.sh
+exec ~/.scripts/sway/timeout.sh
     # Gaps
 gaps left 7
 gaps right 7

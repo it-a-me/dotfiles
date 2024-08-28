@@ -7,7 +7,6 @@ if test "$ID" = "gentoo"; then
 fi
 
 "$CONFIG_DIR"/exec/wallpaper.sh &
-"$CONFIG_DIR"/scripts/window_managers/sway/timeout.sh &
 if test -x ~/.local/bin/waybar; then
 	~/.local/bin/waybar &> ~/.cache/waybar.log &
 elif command -v waybar; then
