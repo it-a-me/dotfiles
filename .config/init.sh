@@ -2,9 +2,7 @@
 
 update_environment() {
 	set -a
-	TMP="$(mktemp)"
-	/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator > "${TMP}"
-	. "${TMP}"
+	eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)"
 	set +a
 }
 
