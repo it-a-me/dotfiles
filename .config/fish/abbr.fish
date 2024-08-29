@@ -5,6 +5,8 @@ alias ffmpeg 'ffmpeg -hide_banner'
 alias ffprobe 'ffprobe -hide_banner'
 alias ffplay 'ffplay -hide_banner'
 alias codium 'codium --ozone-platform-hint=auto'
+alias code 'code --ozone-platform-hint=auto'
+alias vscode 'vscode --ozone-platform-hint=auto'
 
 abbr ollama podman exec -it ollama ollama
 abbr userctl systemctl --user
