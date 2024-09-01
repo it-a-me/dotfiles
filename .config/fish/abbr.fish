@@ -12,3 +12,4 @@ abbr ollama podman exec -it ollama ollama
 abbr userctl systemctl --user
 abbr ujournal journalctl --user
 abbr g git 
+abbr tmpman podman run -it --rm --workdir /mnt --mount type=bind,destination=/mnt,src=.
