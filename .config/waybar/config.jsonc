@@ -20,8 +20,10 @@
     "format": "Bat:{}%"
   },
   "pulseaudio": {
-    "format": "Vol:{volume}",
-    "format-muted": "MEM:M({volume}%)"
+    "format": "{format_source}  Vol:{volume}",
+    "format-muted": "Vol:M({volume}%)",
+    "format-source": "Mic On",
+    "format-source-muted": "Mic Off"
   },
   "cpu": {
     "interval": 2,
