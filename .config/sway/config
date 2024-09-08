@@ -25,7 +25,8 @@ output 'AOC 24G1WG4 0x000199D9' pos 0 0
 bindsym XF86AudioLowerVolume exec "~/.config/window_manager/exec/volume/volume_down.sh"
 bindsym XF86AudioRaiseVolume exec "~/.config/window_manager/exec/volume/volume_up.sh"
 bindsym XF86AudioMute        exec "~/.config/window_manager/exec/volume/toggle_mute.sh" 
-bindsym XF86AudioMicMute        exec "~/.scripts/pipewire/toggle_mic_mute.sh" 
+bindsym XF86AudioMicMute     exec "~/.scripts/pipewire/toggle_mic_mute.sh"
+bindsym Pause	             exec "~/.scripts/pipewire/toggle_mic_mute.sh"
 bindsym Mod4+XF86AudioMute        exec espeak-ng -a 100 'test sound'
 bindsym Mod4+XF86AudioLowerVolume exec "~/.config/window_manager/scripts/hardware/brightness/decrease_brightness.sh"
 bindsym Mod4+XF86AudioRaiseVolume exec "~/.config/window_manager/scripts/hardware/brightness/increase_brightness.sh"
