@@ -38,7 +38,7 @@ bindsym Mod4+Shift+Return exec "fuzzel --terminal foot"
 bindsym Mod4+Return exec foot
 bindsym Print exec ~/.scripts/sway/screenshot.sh
 bindsym Shift+Print exec ~/.config/window_manager/exec/screenshot/selection.sh
-bindsym Alt+Print exec ~/.scripts/force_copy.ih
+bindsym Alt+Print exec ~/.scripts/force_copy.sh
 bindsym Mod4+b exec firefox
 
 
